@@ -1,5 +1,5 @@
 # Use the official PyTorch image with CUDA 11.8 support
-FROM pytorch/pytorch:2.0.0-cuda11.8-cudnn8-runtime
+FROM pytorch/pytorch:2.0.1-cuda11.8-cudnn8-runtime
 
 # Set the working directory
 WORKDIR /workspace
@@ -15,9 +15,6 @@ COPY . /workspace
 # Install Python dependencies
 RUN pip install --no-cache-dir --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Set environment variables (optional, but do not include sensitive data here)
-# ENV HF_TOKEN=${HF_TOKEN}
 
 # Set the default command
 CMD ["/bin/bash"]
