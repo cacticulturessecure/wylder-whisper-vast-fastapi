@@ -7,20 +7,23 @@ WORKDIR /workspace
 # Prevent interactive prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Copy requirements.txt into the image
-COPY requirements.txt /workspace/
-
 # Install system dependencies and Python packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3=3.10.6-1~22.04.2 \
-    python3-pip=22.0.2+dfsg-1ubuntu0.2 \
-    ffmpeg=7:4.4.2-0ubuntu0.22.04.1 \
-    git=1:2.34.1-1ubuntu1.9 \
+    python3 \
+    python3-pip \
+    ffmpeg \
+    git \
+    nano \
     && rm -rf /var/lib/apt/lists/* \
     && pip3 install --no-cache-dir --upgrade pip \
-    && pip3 install --no-cache-dir -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118 \
+    # Install PyTorch with specific versions
+    && pip3 install torch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 --index-url https://download.pytorch.org/whl/cu118 \
+    # Install WhisperX
     && pip3 install --no-cache-dir git+https://github.com/m-bain/whisperx.git
+
+# Set environment variables to disable TF32
+ENV TORCH_BACKENDS_CUDA_MATMUL_ALLOW_TF32=false
+ENV TORCH_BACKENDS_CUDNN_ALLOW_TF32=false
 
 # Set the default command
 CMD ["/bin/bash"]
-
