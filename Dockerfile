@@ -7,41 +7,20 @@ WORKDIR /workspace
 # Prevent interactive prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install system dependencies
+# Copy requirements.txt into the image
+COPY requirements.txt /workspace/
+
+# Install system dependencies and Python packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3 \
-    python3-pip \
-    ffmpeg \
-    git \
-    && rm -rf /var/lib/apt/lists/*
-
-# Upgrade pip
-RUN pip3 install --no-cache-dir --upgrade pip
-
-# Install a compatible version of NumPy
-RUN pip3 install --no-cache-dir numpy==1.24.4
-
-# Install PyTorch with CUDA 11.8 support
-RUN pip3 install --no-cache-dir \
-    torch==2.0.0+cu118 \
-    torchvision==0.15.0+cu118 \
-    torchaudio==2.0.0 \
-    --extra-index-url https://download.pytorch.org/whl/cu118
-
-# Install compatible versions of packages
-RUN pip3 install --no-cache-dir \
-    tqdm \
-    pyannote.audio==2.1.1 \
-    pyannote.pipeline==2.4 \
-    torchmetrics==0.11.4
-
-# Install WhisperX and dependencies
-RUN pip3 install --no-cache-dir git+https://github.com/m-bain/whisperx.git
-
-# Install any additional Python packages you need
-RUN pip3 install --no-cache-dir \
-    pydantic==1.10.2 \
-    colorama==0.4.6
+    python3=3.10.6-1~22.04.2 \
+    python3-pip=22.0.2+dfsg-1ubuntu0.2 \
+    ffmpeg=7:4.4.2-0ubuntu0.22.04.1 \
+    git=1:2.34.1-1ubuntu1.9 \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip3 install --no-cache-dir --upgrade pip \
+    && pip3 install --no-cache-dir -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118 \
+    && pip3 install --no-cache-dir git+https://github.com/m-bain/whisperx.git
 
 # Set the default command
 CMD ["/bin/bash"]
+
