@@ -18,6 +18,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Upgrade pip
 RUN pip3 install --no-cache-dir --upgrade pip
 
+# Install a compatible version of NumPy
+RUN pip3 install --no-cache-dir numpy==1.24.4
+
 # Install PyTorch with CUDA 11.8 support
 RUN pip3 install --no-cache-dir \
     torch==2.0.0+cu118 \
@@ -31,8 +34,8 @@ RUN pip3 install --no-cache-dir git+https://github.com/m-bain/whisperx.git
 # Install any additional Python packages you need
 RUN pip3 install --no-cache-dir \
     pydantic==1.10.2 \
-    colorama==0.4.6
+    colorama==0.4.6 \
+    tqdm
 
 # Set the default command
 CMD ["/bin/bash"]
-
