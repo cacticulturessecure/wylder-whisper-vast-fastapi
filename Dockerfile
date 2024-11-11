@@ -1,5 +1,5 @@
-# Use the official Ubuntu 22.04 LTS as the base image
-FROM ubuntu:22.04
+    pydantic==1.# Use NVIDIA CUDA base image with CUDA 11.8 and cuDNN 8
+FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
 
 # Set the working directory
 WORKDIR /workspace
@@ -34,6 +34,12 @@ RUN pip3 install --no-cache-dir git+https://github.com/m-bain/whisperx.git
 # Install any additional Python packages you need
 RUN pip3 install --no-cache-dir \
     pydantic==1.10.2 \
+    colorama==0.4.6 \
+    tqdm
+
+# Set the default command
+CMD ["/bin/bash"]
+10.2 \
     colorama==0.4.6 \
     tqdm
 
