@@ -33,15 +33,6 @@ RUN pip3 install --no-cache-dir \
     pydantic==1.10.2 \
     colorama==0.4.6
 
-# Copy your scripts into the container
-COPY transcribe.py test_setup.py /workspace/
-
-# Make scripts executable
-RUN chmod +x test_setup.py transcribe.py
-
-# Expose any necessary ports (if applicable)
-# EXPOSE 8080
-
 # Set the default command
 CMD ["/bin/bash"]
 
