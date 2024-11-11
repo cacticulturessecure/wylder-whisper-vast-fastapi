@@ -1,4 +1,4 @@
-    pydantic==1.# Use NVIDIA CUDA base image with CUDA 11.8 and cuDNN 8
+# Use NVIDIA CUDA base image with CUDA 11.8 and cuDNN 8
 FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
 
 # Set the working directory
@@ -28,20 +28,20 @@ RUN pip3 install --no-cache-dir \
     torchaudio==2.0.0 \
     --extra-index-url https://download.pytorch.org/whl/cu118
 
+# Install compatible versions of packages
+RUN pip3 install --no-cache-dir \
+    tqdm \
+    pyannote.audio==2.1.1 \
+    pyannote.pipeline==2.4 \
+    torchmetrics==0.11.4
+
 # Install WhisperX and dependencies
 RUN pip3 install --no-cache-dir git+https://github.com/m-bain/whisperx.git
 
 # Install any additional Python packages you need
 RUN pip3 install --no-cache-dir \
     pydantic==1.10.2 \
-    colorama==0.4.6 \
-    tqdm
-
-# Set the default command
-CMD ["/bin/bash"]
-10.2 \
-    colorama==0.4.6 \
-    tqdm
+    colorama==0.4.6
 
 # Set the default command
 CMD ["/bin/bash"]
