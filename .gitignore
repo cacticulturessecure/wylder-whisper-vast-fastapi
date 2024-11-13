@@ -6,7 +6,7 @@ __pycache__/
 .env
 
 # Data and logs
-data/
+audio/
 logs/
 
 # Virtual environments
