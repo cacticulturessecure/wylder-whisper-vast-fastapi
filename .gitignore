@@ -6,7 +6,7 @@ __pycache__/
 .env
 
 # Data and logs
-audio/
+audio-only/
 logs/
 
 # Virtual environments
@@ -19,3 +19,6 @@ env/
 # IDE files
 .vscode/
 .idea/
+
+# File types
+.wav
