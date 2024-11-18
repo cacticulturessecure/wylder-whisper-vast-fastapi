@@ -1,31 +1,20 @@
-# Use NVIDIA CUDA base image with CUDA 11.8 and cuDNN 8
-FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
+FROM nvidia/cuda:11.8.0-runtime-ubuntu22.04
 
-# Set the working directory
-WORKDIR /workspace
+RUN apt-get update -y && \
+  apt-get install -y git ffmpeg software-properties-common && \
+  add-apt-repository -y ppa:deadsnakes/ppa && \
+  apt-get install -y python3.10 python3-pip && \
+  pip3 install setuptools-rust && \
+  pip3 install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu118 && \
+  pip3 install git+https://github.com/m-bain/whisperx.git && \
+  git clone https://github.com/m-bain/whisperX.git /whisperx && \
+  pip3 install -e /whisperx &&\
+  pip3 install colorama ctranslate2==3.24.0 pydantic
+  mkdir /app && \
+  cd /app && \
+  rm -rf /var/lib/apt/lists/*
 
-# Prevent interactive prompts during package installation
-ENV DEBIAN_FRONTEND=noninteractive
+WORKDIR /app
 
-# Install system dependencies and Python packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3 \
-    python3-pip \
-    ffmpeg \
-    git \
-    nano \
-    && rm -rf /var/lib/apt/lists/* \
-    && pip3 install --no-cache-dir --upgrade pip \
-    # Install PyTorch with specific versions
-    && pip3 install torch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 --index-url https://download.pytorch.org/whl/cu118 \
-    # Install WhisperX
-    && pip3 install --no-cache-dir git+https://github.com/m-bain/whisperx.git
-    # Install colorama pydantic and specific version of
-    && pip3 install colorama ctranslate2==3.24.0 pydantic
+ENTRYPOINT ["/usr/local/bin/whisperx"]
 
-# Set environment variables to disable TF32
-ENV TORCH_BACKENDS_CUDA_MATMUL_ALLOW_TF32=false
-ENV TORCH_BACKENDS_CUDNN_ALLOW_TF32=false
-
-# Set the default command
-CMD ["/bin/bash"]
