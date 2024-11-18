@@ -8,8 +8,8 @@ RUN apt-get update -y && \
   pip3 install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu118 && \
   pip3 install git+https://github.com/m-bain/whisperx.git && \
   git clone https://github.com/m-bain/whisperX.git /whisperx && \
-  pip3 install -e /whisperx &&\
-  pip3 install colorama ctranslate2==3.24.0 pydantic
+  pip3 install -e /whisperx && \
+  pip3 install colorama ctranslate2==3.24.0 pydantic && \
   mkdir /app && \
   cd /app && \
   rm -rf /var/lib/apt/lists/*
@@ -17,4 +17,3 @@ RUN apt-get update -y && \
 WORKDIR /app
 
 ENTRYPOINT ["/usr/local/bin/whisperx"]
-
