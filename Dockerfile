@@ -20,6 +20,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && pip3 install torch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 --index-url https://download.pytorch.org/whl/cu118 \
     # Install WhisperX
     && pip3 install --no-cache-dir git+https://github.com/m-bain/whisperx.git
+    # Install colorama pydantic and specific version of
+    && pip3 install colorama ctranslate2==3.24.0 pydantic
 
 # Set environment variables to disable TF32
 ENV TORCH_BACKENDS_CUDA_MATMUL_ALLOW_TF32=false
