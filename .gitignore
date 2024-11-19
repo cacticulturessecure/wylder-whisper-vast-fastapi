@@ -22,3 +22,26 @@ env/
 
 # File types
 .wav
+*.wav
+**/*.wav
+# Audio files
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+
+# Large media files
+*.mp4
+*.mov
+*.avi
+
+# Directories that might contain large files
+**/recordings/
+**/audio/
+**/video/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
