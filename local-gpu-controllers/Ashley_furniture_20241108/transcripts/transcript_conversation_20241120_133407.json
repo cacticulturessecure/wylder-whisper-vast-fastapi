@@ -1,0 +1,430 @@
+[
+  {
+    "speaker": "Unknown",
+    "text": "Okay."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Hey Anil, how you doing?"
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Good, how are you?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Doing well. Thank you for stepping in today, man. Really appreciate it."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah, of course. Have we heard anything or any word about like whether they've made any progress?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Yeah, so I think since the last call you were on, yeah, they've made significant progress. We are tracking to have ng-wap, I think, deployed and in testing on one of the sites in production at some point today. And then next week, we're going to be all set up to push delivery in production on both the Ashley Furniture and Ashley Direct. So everything's tracking towards that. As far as kind of the last call, we went through, let me just pull up, if you can just, I'm gonna pull up my notes, if you just let me know if somebody joins here. So we kind of went through, so on the technical side, some BCL adjustments, resolving the IP ranges, issues around Akamai, those were resolved. They're set to proceed with the NGRAP testing today. And so essentially, we just want to make sure that tying up any loose ends before they begin any testing. And then probably just some review. I don't know how familiar you are on the delivery side as opposed to security. But we're planning to kind of go through security. That's the kind of main goal going into today. That's the plan, at least. We'll see kind of where that they're at. So they have been making crazy progress. I think a lot of their versions are like 1.48. And I think right now they're doing a lot of the dev staging has kind of been done. And then that's going to, I think, essentially clone over into production with what they're doing with delivery. OK, great. And Adrian went through kind of one of the PDFs for one of the sites. A little over my head, to be honest. But he kind of went through a PDF, and he reviewed that all via email as well. And then on Wednesday's call, we went through all of those options. Zadi jumped on as well at the end. By the way, Zadi's great. I love him. He's doing fantastic. I just really want to call that out. I know you guys are overloaded, and this is not part of your scope. But anyways, that's like high level. So essentially, I'll kind of introduce you, Vic, and we'll walk through, we'll kind of see where their progress is at. There will be any questions that they may have, and then just kind of ask them if there's any loose ends that we need to tie up. But yeah, a lot of significant progress since like a few weeks back. Hey, Bickin."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "text": "Hey, guys."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "text": "Thanks for joining, Anil."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Of course. Yeah, I was just kind of giving him a little rundown, essentially, where we have been at progress-wise, I would say like over the last two weeks. So yeah, Anil, if you have any questions, but Like I said, I think we'll go through, kind of just figure out what loose ends they still need to tie up, and then that should lead into, you know, any hurdles. I did see some communication between Enyir and Adrian last night as well. Okay. So, yeah, I think we'll be good. We just need to confirm, essentially push back that we're just looking good as far as going into per dog. And then me and TJ are hoping that Tracy shows up here."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Hey TJ, I'm Vic. What's happening Neil? Good to see you."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "text": "Yeah. I said good to hear you anyway."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah. Yeah, I mean I can turn on my video."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "We can make it a party."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Does this shirt come through weird over Zoom? Does it look like... Just don't move. Don't move. It's like one of those puzzles you have to stare at on the wall to see into."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Exactly, yeah."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "text": "stay off over there if you guys don't mind. I'm just grabbing a bite to eat while we wait for them. No problem. No worries, no worries at all. What's for lunch? It's actually my first meal. I've been doing this intermittent fasting thing for the last, since COVID actually, it just became a habit. Oh, okay. Usually my last meal or dinner is at about 6 or 7 and then my first meal is about 11 noon."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Okay."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "text": "Just long enough. Yeah. Hey, Neil, quick question for you while we wait for a customer to join. Paculink's signed with us, I think it's been a little week now, and we're just waiting for a solution engineer to get assigned so that we can get them on board. I know you're not in charge of the solution engineer, but do you know I am."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah, I manage the, so we restructured."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "So it's North America Security Solutions and Security Cam are reporting to me. Okay, cool. I'm the right person then."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah, I just assigned Mandy to it yesterday. So she got it. Um, she should be reaching out. Tyler actually pinged in the admin channel and I responded to him to let him know that Mandy was signed. So I believe, yeah, I believe that that's kicked off already. Or at least the"
+  },
+  {
+    "speaker": "Unknown",
+    "text": "This is ng-web at the edge, directly at compute."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "text": "And I'm thinking this is the first instance of that deployment, especially in production. So I'll give her a heads up. And if she needs any help, I know Brooks is really good. He's kind of done that before. OK, great. How are you?"
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "text": "Good."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "How's it going?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Oh, I'm doing an issue right now that I tried to resolve."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "text": "You're trying to what?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "No, I have an issue based on the integration that I tried to resolve. It's not involving anything with Facilities, it's just something with another application on Akama."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Gotcha. Well, glad we could take a break away from that stress. Move on to a different area."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "I sent a couple of messages to Tracy, but she's... She's smart, probably have a meeting or something like that, because I sent a lot of messages this morning, but she didn't answer the message. So I talked with Josh from Robert yesterday night to review the computer edge and how we can integrate that in the current CDM. I finished part of the configuration now, so that means that everything from my side looks good, so I'm just going to start getting ready."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Okay, let me just see there. Okay, so you spec'd with BERT as far as the computed edge portions. Sorry, I missed that last part there."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah, they have a limited second to show the screen."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "In here, by the way. Sorry, before we do jump in there. So Zadi isn't going to be on today, and we have backfill for him, Anil. He's actually Zadi's director. You know him from a few weeks back. He joined the project right when we kind of brought on Jill and the rest of the team to give an overview. So we brought him up to speed on the project. But Anil, I'll let you introduce yourself here before we kick this off."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah, actually, I'm not a director yet. I'm a senior manager. It was nice to meet you. I'm happy to help. I may just need a little bit of an update as to where you are thus far before we get started, if you don't mind."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "And if you can share your screen as well, I know you're about to pull up a diagram to kind of walk through some items. Just a quick rough overview, just for any kind of where we're at on the security side, and then really where we're at going into production, and then any loose ends that we need to tie up as far as the end-to-app side."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Yeah."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "text": "Give me one second to get it from the screen."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yes Okay, this is the computer a star dirt built last time so that's been his application so Right now we are told to factory You see here. We have the AP So this is factory. If I know for this path to repeat, this is the edge. It is the same. It is the same."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "So... And what are the two differences between those two, sorry?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah, the idea is the front. Okay, the front side. So this is the one that you'll say force."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Okay, and this is one that Burt built out This is the Ashley net."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah, exactly. Yeah, actually next got it. So Yeah, well the days probably after the migration or Probably before after this site has at the front This one"
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "text": "You know, it's gone. Yeah, it is."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "This one has at the front end of the site, because if you go once this path, they respond. If you see there, you are up here in the bottom, they respond to actually forms.com to all Salesforce. So they did change the image on, you know, a lot of things, but we continue with the same site."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Okay. And so is the Salesforce part hooked up now with, with, um, Fastly or is that just the front end? Okay, cool."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah. If we know I see this one They respond to a safe force. Let's see here. They respond here, but in the respond they manage another order Other path so I can see this here probably Each other one of these It's changing Yeah This is a force, but you just see this. So right now, it's working. We have everything. I implemented all the recommendation that Adrian sent me. Today, instead of deploying the WAF, I just need to finish, you know, cleaning a little bit the Terraform to deploy the snippets. as a dynamic snippet, and that's it. Because the rules, I completed all the rules, the important rules that we have in Akamai, I just need to review again the rules, just to be sure I don't miss them. So the same rule that I showed, for AshleyDirect, I just need to review again the rules. And the site. I need to build another site here. One for AshleyDead and one for HomeAshleyDead. Uh, do you want me to create that one for you? Or would... Or... I don't know how you do it. Oh, yeah. Okay. Okay. Okay. Okay. I can create it. Uh, we have to draw everything between telephone. Let me see if I can see here. Oh, okay. You're doing it through telephone. Okay, great. Yeah. Awesome. Yeah, yesterday I sent this telephone tape to Adrian to review and send me a couple of, you know, recommendations for the telephone, but it's all basically just the main, everything, control, you know, bars, variables, all the variables defined here, and that's it. And we just define a TFR. Okay. Yeah. Yes. Right now I'm working with the WAF to deploy the WAF here in the CDM. Okay. The integration idea is to create another template just to manage the role. And everyone, you know, no one, sorry, no one touch the role, just cybersecurity. Because the idea is to give the opportunity to the owner manage his own repository And they can create or you know, change something after we review everything, you know? I say complete overview that I have right now, same stuff that we have here DMS, we just have two subscriptions right now Well, actually yet And for self-certificate, we have more. So we manage with technical. So I'll just send a message to Robert to duplicate this service. One for crawl, one for staging, and one for that. Because in... Sorry. We managed to cite And say for that's mean they're fine staging a problem. So we have three embarked three difference embarked for page The patient that we managed to stage for so 18 has different, you know, this to do in the e-commerce Against to if we go to this guy here after a month. So right now, well yesterday he tried to create it, but he ran another issue. I mean, he tried to resolve the issue that he has involved in putting other projects. Right now I'm just waiting for him. So that's me. I just need to start review again all the configurations. Right in the store like this one. I know I I have this I know that you asked me about this request I need to change I need to change Different stuff here because I discovered another style. I didn't know just from outside just to put more information"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Okay, that makes sense. And this is the one that you're sharing and reviewing with Tracy?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Okay. And so how is she kind of finding the progress? Are we in line on her side?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah, last week we talked, I showed everything, Robert showed the same. Right now she's dealing with the asset, I don't know. Yeah, it's the thing, you know, minus all the budget, everything, so it's, you know. I was meeting with them, so I don't know really what is the start Okay, because when she asked I just you know responded technical For the technical part How we feel?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "No, understood there. Yeah, well, me and TJ will continue to lean on Bert and your, if there's anything you guys can do to help us just get a conversation set up with Tracy. We really just want to close the loop with her just to make sure everything's lined up."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Sure. Well, one of the guys from Ashley today, he's testing this. Yesterday he tested a little bit, now she's working on this. Okay, so faculty to see seem missing we're missing something I Have a question for the the services where we do have ng-waf deployed Is there any Testing or anything that we need to perform just just a you know test performance or Availability What do you mean there was if there was blocking or personal world, so yeah, this would be certain I Yeah, yeah, right, so we sometimes run into this, customers like to, once they do a deployment of the NGOF, they want to test performance to see if there's any additional latency or if there's anything that we need to do in terms of testing the load, like let's say for example, you have like a promotion going on and we end up in a situation where we see bursts of traffic. We just wanna make sure that your site is available when we see those kinds of bursts of traffic. Does anyone do anything like that in your department? Yeah, well the QA, I mean, the QA, they supposed to do it bad, but also we have the love. We have a be testing that sidestep. We just create a rule to not deny any traffic from the Don't worry. Yeah from size that I'm safer. Yo, we just you know, allow all the traffic between that integration because it's right now fastly a safe or unsighted That's a lot. I mean we don't deny is something come from you know, like I've been I please come from the user That's right to do something Also, we have the human X in the front. If we detect something weird from the user, the human X is denied. Before today, it was denied, actually. Got it. Okay. And out of curiosity, are we doing client-side bot detection with Prometer X? Yeah. Okay. Yeah, I raise integrate. I just seen How's that? Well, right now I just need to add some of the configuration here Okay, because they respond to this back there. The guy is from human eggs. They say type repeat always Don't touch this fire This fire so, you know, yeah The idea is you know, just we want to add something here. I this file, because I involve the AP key, the IPV, everything that we need to enforce it. Okay. And then, one more thing I had a question about, and actually Chris, this may be a question for you. Do we have bot detection, like for our, on the PASI side, do we have bot detection enabled?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "That's a good question. So Anil, right now we don't. However, longer term, so we've been talking with David, and this is just maybe out of scope, but we have been discussing longer term replacing Perimeter X as part of the project for phase two, and then possibly looking into SiteSpec kind of longer term. But we still need to kind of work out with marketing what benefit they're getting on the SiteSpec side. But that's kind of where we're working with David, who's the ahead of retail over at Ashley. That's going to be Phase 2 once Perimeter X comes up for expiration. But we'll get into details, we'll just go by now."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "That's okay. I was just curious, thank you. And then, yeah, so right now I know you're kind of working in doing the integration. Do we have an ETA, or maybe you need to come back to me and answer this question, but when would QA be doing their load testing or performance testing or anything like that? Yeah, I need to talk with me Steven a bird to take the leader that to QA because they manage that team Okay."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Okay."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "I just send a recommendation for my side. I can do someone texting about the you know, it's ruining a scum I can turn on the request. Ah Okay, I thought the very scenario in the call. Sorry, but All good Okay, so that's me is very strong that does work."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "I"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Excellent. So that's me. All for myself. I don't know if you have some concern about the integration of the computer over the CDNs. It's being clarified here. Do you have any question? No, no. And I'm sorry, is your name Bert? I apologize if I have your name wrong. I was at lunch. I'm sorry I was a little bit late."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "No, no, it's okay. I knew it as well. You'll hear Andrew refer to Bert as Robert, so that's who you're subscribing to currently."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "I was like, wait, that R looks like maybe it could be a Robert."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Yeah, yeah, yeah."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "So yeah, I heard you say that you'll be kind of doing some of the testing for the edgy walk integration, is that right? Yeah, yeah, I can get them started. We have the QA team. I'll get them started on it. I'll start, they can start testing it. Okay, like, uh, you know, like right now? No, not right now, probably like, oh, okay, first thing Monday. Yeah."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "text": "Oh, okay, all right, cool."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah. All right, perfect. Um, do you have a, like a ETA, like, time on Monday? Just, because I want to make sure that we're available to support you. Yeah, um, I mean, let's, I mean, we can talk about when would you guys be available. I got, like, I'll, um, I shouldn't have said first thing Monday. I gotta talk to them about their schedules too, but sure. Um, I mean, let me know what times work for you guys and I'll find out what terms work for them and we can figure it out from there."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Okay."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah. I'm happy to just shoot over via email, like what our ability is and can coordinate that way."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Awesome. Great. And you've been doing, the CDN and compute testing in the background as well, right? Yep."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "text": "And approving every use case and testing them off and everything?"
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Yep."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "text": "Okay. Any questions or concerns there at all?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Not really, honestly. I'm expecting more because really like for mine, like we're probably only going to do a few pages at first. That's just how our app is in general. I'm guessing I'll probably have more questions as we scale it out. Jack Page are probably going to start with and that seems all good to me right now."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "text": "And is that what the initial production rollout then looks like? Is just a couple of pages through fastly and then you slowly ramp up? Yeah, I would probably guess, yeah."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "text": "Okay."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "text": "I just want to kind of make sure we have we have that visibility into what that looks like before we call it live on production, so."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Yeah. Okay. And from your perspective, the reason I bring this up is because we're coming up on that timeframe, right?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "text": "Like next week is kind of it where we have to, have the production on fastly. The production traffic kind of before we started rolling into Thanksgiving. So and you're are you all set with like, with testing? And do you have a vision or visibility into what that and what that looks like before we go live?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah, well from the old configuration by Israeli loose walls That's me. I mean in the rest, you know, they lose well because everything for houses as I expect You know how we have impact on So that's me. We have everything in factly. So when we made also guys better work that when they say no Okay So Chris when you talk to Tracy at least we have that I"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "text": "you know, let her know that from Bert and his perspective, looks like things are in place, almost ready for production rollout, so that at least they have that, they have that in their pocket as they're going through an internal paperwork and all that."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Yeah. Yeah, perfect. I appreciate that. Um, and Neil, I know you saw this thing two weeks ago with where we're at. Um, how do you think and you're in burger kind of doing production wise, kind of tracking towards what you've seen from other companies?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Yeah, I think we're making some good progress here. I would just be interested to know what the testing looks like and whether we run into any issues during testing. Because I just want to make sure that we have a smooth rollout to production. I, like I said earlier, I'll gather our availability, either mine or Zadi's, and I'll share it with the Ashley team, and then we can coordinate next week for when we're gonna do any testing."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Perfect. That would be appreciated, Anil. Thank you for that and coordinating. TJ, anything else from your side?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "text": "I think we covered it."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Absolutely. All right. We'll be in touch via email I'm taking it from here and your Bert before we close out any kind of loose ends or anything that's popped up That may be top of mind before we close out here Yeah"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "Maria is clogged this config because if the same that we have in depth or staging Just change the webcam and we can work with the depth side try to migrate that Next week and we can see how score Okay. No, yeah, we can test in that just to see it before to touch approach. I I don't know if this bird is angry when that is just Swedish Yeah, I'm good of it If you can do not let you know Tracy are we on? Working with that. I'm Steven because I know Steven well in that side and he has a couple of guys behind it Just to let you know that I start a we're going to touch that populist time. I Yeah, that sounds good to me. Sounds good."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "text": "All right."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "text": "All right, cool. I'm just drafting up the email right now with the availability, so just look for that shortly."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Perfect. Thank you, Neil. All right, everyone. Well, happy testing, and let's move into production next week. Alright guys, have a good one."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "text": "I'll turn you in. I love you, Sarah."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "text": "Should I go with you?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "text": "Yeah."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "submitted in my workbook."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "text": "Oh, you just told me, like, just how to do it. I just told AI about it. Wait, what did you mean? Your work AI? Oh, that's good."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Damn, damn."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "text": "I respect that she's emailed to me. For that day, what day are you leaving next week? Do you know? Yeah."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Midnight?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "text": "Might be taking an earlier flight."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Alright, I'm ready. Am I getting sushi?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "text": "You're getting sushi."
+  },
+  {
+    "speaker": "Unknown",
+    "text": "Hi."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "text": "Ah, man, it's really funny to watch all these people have the same stress that I do. I just see them lose their minds. I know. It's going to come in."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "text": "Shall I fund Peter getting a bank account?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "text": "Yes."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "text": "OK. He's going to go today. Is that what's going to happen today? It is. OK. He said he might need some money. Give him whatever money. OK. And he said, I'll give him money. I'm like, don't. I'll give him money because he'll take it. $500? No, it's like $50."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Congratulations. We'll open your bank account with $100."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "text": "Yeah, whatever the minimum is."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "text": "Yeah. No, 100% given that should not be an excuse. Yes, whatever money."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "text": "I'm going to tell him to call."
+  }
+]
