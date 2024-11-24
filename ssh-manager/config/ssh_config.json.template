@@ -1,0 +1,58 @@
+{
+    "environments": {
+        "local": {
+            "host": "localhost",
+            "user": "${LOCAL_USER}",
+            "key_path": "~/.ssh/id_rsa_local"
+        },
+        "gpu_text": {
+            "host": "${GPU_TEXT_HOST}",
+            "user": "${GPU_TEXT_USER}",
+            "key_path": "~/.ssh/id_rsa_gpu_text"
+        },
+        "gpu_audio": {
+            "host": "${GPU_AUDIO_HOST}",
+            "user": "${GPU_AUDIO_USER}",
+            "key_path": "~/.ssh/id_rsa_gpu_audio"
+        },
+        "web_dev": {
+            "host": "${WEB_DEV_HOST}",
+            "user": "${WEB_DEV_USER}",
+            "key_path": "~/.ssh/id_rsa_web_dev"
+        },
+        "web_staging": {
+            "host": "${WEB_STAGING_HOST}",
+            "user": "${WEB_STAGING_USER}",
+            "key_path": "~/.ssh/id_rsa_web_staging"
+        },
+        "web_prod": {
+            "host": "${WEB_PROD_HOST}",
+            "user": "${WEB_PROD_USER}",
+            "key_path": "~/.ssh/id_rsa_web_prod"
+        }
+    },
+    "key_settings": {
+        "default_type": "ed25519",
+        "key_length": 4096,
+        "rotation_period_days": 90,
+        "backup_enabled": true,
+        "backup_path": "~/.ssh/backups"
+    },
+    "security": {
+        "allow_password_auth": false,
+        "require_passphrase": true,
+        "allowed_key_types": [
+            "ed25519",
+            "rsa"
+        ],
+        "minimum_key_length": 4096
+    },
+    "logging": {
+        "enabled": true,
+        "log_path": "logs/ssh_manager.log",
+        "log_level": "INFO",
+        "rotate_logs": true,
+        "max_log_size_mb": 10,
+        "max_log_files": 5
+    }
+}
