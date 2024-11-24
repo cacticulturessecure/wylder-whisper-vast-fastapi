@@ -9,7 +9,7 @@ RUN apt-get update -y && \
   pip3 install git+https://github.com/m-bain/whisperx.git && \
   git clone https://github.com/m-bain/whisperX.git /whisperx && \
   pip3 install -e /whisperx && \
-  pip3 install colorama ctranslate2==3.24.0 pydantic && \
+  pip3 install colorama ctranslate2==3.24.0 rich pydantic && \
   mkdir /app && \
   cd /app && \
   rm -rf /var/lib/apt/lists/*
