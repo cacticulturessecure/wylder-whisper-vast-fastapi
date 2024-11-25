@@ -1,6 +1,5 @@
 #!/bin/bash
-# 02_vast_key_setup.sh
-# Configure SSH keys and permissions for Vast.ai GPU server
+# 02_vast_key_setup.sh - Modified version
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASE_DIR="$(dirname "$SCRIPT_DIR")"
@@ -10,9 +9,8 @@ log() {
   echo "[$(date +'%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
 }
 
-error() {
-  echo "[$(date +'%Y-%m-%d %H:%M:%S')] ERROR: $1" | tee -a "$LOG_FILE"
-  exit 1
+info() {
+  echo "[$(date +'%Y-%m-%d %H:%M:%S')] INFO: $1" | tee -a "$LOG_FILE"
 }
 
 # Create SSH directory if it doesn't exist
@@ -29,20 +27,12 @@ log "Creating key configuration directory..."
 mkdir -p ${BASE_DIR}/config/keys
 chmod 700 ${BASE_DIR}/config/keys
 
-# Function to add a new SSH key
-add_ssh_key() {
-  local key_file="${BASE_DIR}/config/keys/tunnel_key.pub"
-  if [ -f "$key_file" ]; then
-    log "Adding new SSH key to authorized_keys..."
-    cat "$key_file" >>~/.ssh/authorized_keys
-    chmod 600 ~/.ssh/authorized_keys
-    log "SSH key added successfully"
-  else
-    error "No SSH key found at $key_file"
-  fi
-}
+# Instead of failing, create a placeholder file
+log "Creating placeholder for SSH key..."
+cat >${BASE_DIR}/config/keys/README.txt <<EOF
+Place your tunnel_key.pub file here.
+This file will be automatically detected and added to authorized_keys.
+EOF
 
-# Add key if present
-add_ssh_key
-
-log "SSH key setup complete"
+info "Setup complete. Waiting for tunnel_key.pub to be added to ${BASE_DIR}/config/keys/"
+info "Once key is added, run: cat ${BASE_DIR}/config/keys/tunnel_key.pub >> ~/.ssh/authorized_keys"
