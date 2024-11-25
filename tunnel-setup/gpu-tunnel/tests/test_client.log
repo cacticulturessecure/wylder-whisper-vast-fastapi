@@ -1,0 +1,6 @@
+2024-11-25 09:22:53,815 - INFO - Testing health endpoint...
+2024-11-25 09:22:54,953 - INFO - Health check successful: {'status': 'healthy', 'timestamp': '2024-11-25T15:22:54.532262', 'service': 'tunnel-test'}
+2024-11-25 09:22:54,954 - INFO - Sending test 1/1
+2024-11-25 09:22:55,069 - ERROR - Test 1 failed: 404
+2024-11-25 09:28:48,457 - INFO - Testing health endpoint...
+2024-11-25 09:28:48,545 - ERROR - Health check error: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
