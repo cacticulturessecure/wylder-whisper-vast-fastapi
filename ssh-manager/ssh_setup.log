@@ -1,0 +1,3 @@
+2024-11-24 06:36:39,733 - ERROR - Connection test failed for gpu-text.company.com: [Errno -5] No address associated with hostname
+2024-11-24 06:37:16,088 - ERROR - Error generating key for gpu_text: Command '['ssh-keygen', '-t', 'ed25519', '-f', '/home/securemeup/.ssh/id_ed25519_gpu_text', '-N', '']' returned non-zero exit status 1.
+2024-11-24 06:39:38,474 - ERROR - Connection test failed for gpu-audio.company.com: [Errno -5] No address associated with hostname
